@@ -110,7 +110,17 @@ Option             | Usage        | Type
 
 Omitting `--number` will guess issue number from the last commit message.
 
-Both Jira and GitHub usernames are supported `--assignee` values.
+Both Jira and GitHub usernames are supported `--assignee` values. If a GitHub username can't be automatically mapped to its Jira counterpart it can be manually done through config like this:
+```
+"jira": {
+  <other options>,
+  "users": {
+    "githubusername1": "Jira Username 1",
+    "githubusername2": "Jira Username 2"
+  }
+}
+```
+
 
 #### Examples
 

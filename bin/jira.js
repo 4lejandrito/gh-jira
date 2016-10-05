@@ -122,6 +122,11 @@ class Jira {
 
     searchUserByGitHubUsername (query) {
         return new Promise((resolve, reject) => {
+
+            if (jiraConfig.users && jiraConfig.users[query]) {
+                query = jiraConfig.users[query];
+            }
+
             this.searchUsers(query)
             .then((users) => {
                 resolve(users);
